@@ -151,6 +151,7 @@
     <ClInclude Include="DT_Hero_Config.h" />
     <ClInclude Include="strtk.hpp" />
     <ClInclude Include="uniqsconfig.h" />
+    <ClInclude Include="uniqsconfigtypes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

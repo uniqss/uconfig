@@ -1,9 +1,8 @@
 #pragma once
 
-#include<stdint.h>
-#include<string>
 #include<vector>
 #include<map>
+#include "uniqsconfigtypes.h"
 
 class DT_Hero_Config
 {
@@ -16,20 +15,20 @@ public:
 		desc = "";
 	}
 	// ×Ö¶ÎÀàÐÍ ×Ö¶ÎÃû
-	uint32_t id;
-	uint32_t type;
-	std::string name;
-	std::string desc;
+	uint32 id;
+	uint32 type;
+	string name;
+	string desc;
 };
 
 class DT_Hero_Config_Data
 {
 public:
 	std::vector< DT_Hero_Config> Datas;
-	std::map<uint32_t, DT_Hero_Config*> MapItems1;
-	std::map<std::tuple<uint32_t, std::string>, DT_Hero_Config*> MapItems2;
+	std::map<uint32, DT_Hero_Config*> MapItems1;
+	std::map<std::tuple<uint32, string>, DT_Hero_Config*> MapItems2;
 public:
-	const DT_Hero_Config* FindByKey1(const uint32_t& Id) const
+	const DT_Hero_Config* FindByKey1(const uint32& Id) const
 	{
 		auto it = MapItems1.find(Id);
 		if (it != MapItems1.end())
@@ -38,7 +37,7 @@ public:
 		}
 		return nullptr;
 	}
-	const DT_Hero_Config* FindByKey2(const uint32_t& Type, const std::string& Name) const
+	const DT_Hero_Config* FindByKey2(const uint32& Type, const string& Name) const
 	{
 		auto it = MapItems2.find(make_tuple(Type, Name));
 		if (it != MapItems2.end())

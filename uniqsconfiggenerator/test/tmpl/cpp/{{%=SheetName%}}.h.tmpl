@@ -1,0 +1,63 @@
+#pragma once
+
+#include<vector>
+#include<map>
+#include "uniqsconfigtypes.h"
+
+class {{%=SheetName%}}
+{
+public:
+	{{%=SheetName%}}()
+	{
+	{{%loop.header.begin%}}
+	    {{%=CodeName%}} = {{%=CodeName.Default%}};
+    {{%loop.header.end%}}
+	}
+	// 字段类型 字段名
+	{{%loop.header.begin%}}
+	{{%=Type%}} {{%=CodeName%}};// {{%=Description%}}
+    {{%loop.header.end%}}
+};
+
+class {{%=SheetName%}}_Data
+{
+public:
+	std::vector<{{%=SheetName%}}> Datas;
+
+{{%loop.group.begin|PrimaryKey%}}
+	{{%if.begin|count.PrimaryKey=1}}
+	std::map<{{%=Type%}}, {{%=SheetName%}}*> MapItems{{%group}};
+	{{%if.end}}
+
+	{{%if.begin|count.PrimaryKey>1}}
+	std::map<std::tuple<{{foreach|{{Type}}|", "}}>, {{%=SheetName%}}*> MapItems{{%group}};
+	{{%if.end}}
+{{%loop.group.end}}
+
+public:
+{{%loop.group.begin|PrimaryKey%}}
+#
+{{%if.begin|count.PrimaryKey=1}}
+	const {{%=SheetName%}}* FindByKey{{%group}}(const {{%=Type%}}& {{%=CodeName%}}) const
+	{
+		auto it = MapItems{{%group}}.find({{%CodeName}});
+{{%if.end}}
+{{%if.begin|count.PrimaryKey>1}}
+	const {{%=SheetName%}}* FindByKey{{%group}}({{%foreach|const {{%Type}}& {{%CodeName}}|", "}}) const
+	{
+		auto it = MapItems{{%group}}.find(make_tuple({{%foreach|{{%CodeName}}|", "}}));
+{{%if.end}}
+
+		if (it != MapItems{{%group}}.end())
+		{
+			return it->second;
+		}
+		return nullptr;
+	}
+{{%loop.group.end}}
+};
+extern {{%=SheetName%}}_Data __g_{{%=SheetName%}}_Data;
+const {{%=SheetName%}}_Data& Get{{%=SheetName%}}();
+// 加载函数
+void {{%=SheetName%}}_LoadData(const std::string& pszDataFilePath);
+void {{%=SheetName%}}_SetColumn({{%=SheetName%}}& rCfg, const std::string& name, const std::string& col);
