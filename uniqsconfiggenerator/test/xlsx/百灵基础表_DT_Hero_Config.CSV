@@ -1,0 +1,7 @@
+#,,,,,,,,,,,,,,,,,,,#
+PrimaryKey,1,2,2,,,,,,,,,,,,,,,,随意
+英文名,id,type,name,desc,model_id,icon,set_paint,quality,star_level,nature_pack,star_pack,skill_pack,fate_pack,collect_pack,gain,skin,reduced,strings,随意
+类型,uint32,uint32,string,string,uint32,string,string,uint32,uint32,uint32,uint32,uint32,uint32[],uint32,uint32[],uint32[],uint32[],string[],随意
+哪里使用,cs,cs,cs,cs,cs,cs,cs,cs,cs,cs,cs,cs,cs,cs,cs,cs,cs,cs,此行不用
+中文名,百灵id,百灵类型,百灵名字,百灵介绍,角色模型,头像icon,图片名字,百灵品质,初始星级,基础属性库,星级属性库,技能包,侠缘属性库,收集属性库,获取方式,皮肤id,折算碎片,测试字符串数组,注释行
+数据,1,1,童承枫,他是个小虾米,10001,Texture2D'/Game/UI/Texture/Hero/Common_headportrait_03.Common_headportrait_03',Texture2D'/Game/UI/Texture/Hero/hero_main/B_UI_information_text_img02_6.B_UI_information_text_img02_6',3,3,1,1,1,1,1,1|3|5,1|2|3,80001|10,aaa|bbb|ccc,

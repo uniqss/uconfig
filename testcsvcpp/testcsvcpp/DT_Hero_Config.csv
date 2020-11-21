@@ -1,0 +1,4 @@
+id,type,name,desc
+uint32,uint32,string,string
+1,123,asdf,他是个小虾米
+123,456,asdf,他是个小虾米
