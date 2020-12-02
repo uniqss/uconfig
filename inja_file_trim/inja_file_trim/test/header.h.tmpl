@@ -9,24 +9,19 @@ class {{SheetName}}
 public:
 	{{SheetName}}()
 	{
-		id = 0;
-		type = 0;
-		name = "";
-		desc = "";
+{% for i in range(length(CodeName)) %}
+		{{ at(CodeName, i) }} = 0;{% endfor %}
 	}
-	// 字段类型 字段名
-	uint32 id;
-	uint32 type;
-	string name;
-	string desc;
+	{% for i in range(length(CodeName)) %}
+	{{ at(Type, i) }} {{ at(CodeName, i) }};// {{ at(Description, i) }}{% endfor %}
 };
 
 class {{SheetName}}_Data
 {
 public:
 	std::vector< {{SheetName}}> Datas;
-	std::map<uint32, {{SheetName}}*> MapItems1;
-	std::map<std::tuple<uint32, string>, {{SheetName}}*> MapItems2;
+{% for key, value in PrimaryKeyTypes) %}
+	{% if length(value) == 1 %}std::map<{{ at(value, 0) }}, {{SheetName}}*> MapItems{{ key }};{% else %}std::map<std::tuple<{% for idx in range(length(value) - 1) %}{{at(value, idx)}}, {% endfor %}{{last(value)}}>, {{SheetName}}*> MapItems{{ key }};{% endif %}{% endfor %}
 public:
 	const {{SheetName}}* FindByKey1(const uint32& Id) const
 	{
@@ -49,6 +44,6 @@ public:
 };
 extern {{SheetName}}_Data __g_{{SheetName}}_Data;
 const {{SheetName}}_Data& Get{{SheetName}}();
-// 加载函数
+// 鍔犺浇鍑芥暟
 void {{SheetName}}_LoadData(const std::string& pszDataFilePath);
 void {{SheetName}}_SetColumn({{SheetName}}& rCfg, const std::string& name, const std::string& col);

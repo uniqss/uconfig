@@ -9,24 +9,35 @@ class DT_Hero_Config
 public:
 	DT_Hero_Config()
 	{
+
 		id = 0;
 		type = 0;
-		name = "";
-		desc = "";
+		name = 0;
+		desc = 0;
+		model_id = 0;
+		icon = 0;
+		set_paint = 0;
+		quality = 0;
 	}
-	// �ֶ����� �ֶ���
-	uint32 id;
-	uint32 type;
-	string name;
-	string desc;
+	
+	uint32 id;// 百灵id
+	uint32 type;// 百灵类型
+	string name;// 百灵名字
+	string desc;// 百灵介绍
+	uint32 model_id;// 角色模型
+	string icon;// 头像icon
+	string set_paint;// 图片名字
+	uint32 quality;// 百灵品质
 };
 
 class DT_Hero_Config_Data
 {
 public:
 	std::vector< DT_Hero_Config> Datas;
+
 	std::map<uint32, DT_Hero_Config*> MapItems1;
 	std::map<std::tuple<uint32, string>, DT_Hero_Config*> MapItems2;
+	std::map<std::tuple<string, uint32, string>, DT_Hero_Config*> MapItems3;
 public:
 	const DT_Hero_Config* FindByKey1(const uint32& Id) const
 	{
@@ -49,6 +60,6 @@ public:
 };
 extern DT_Hero_Config_Data __g_DT_Hero_Config_Data;
 const DT_Hero_Config_Data& GetDT_Hero_Config();
-// ���غ���
+// 加载函数
 void DT_Hero_Config_LoadData(const std::string& pszDataFilePath);
 void DT_Hero_Config_SetColumn(DT_Hero_Config& rCfg, const std::string& name, const std::string& col);

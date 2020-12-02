@@ -4,17 +4,17 @@
 #include<map>
 #include "uniqsconfigtypes.h"
 
-class {{%=SheetName%}}
+class {{SheetName}}
 {
 public:
-	{{%=SheetName%}}()
+	{{SheetName}}()
 	{
-	{{%loop.header.begin%}}
-	    {{%=CodeName%}} = {{%=CodeName.Default%}};
-    {{%loop.header.end%}}
+	{%loop.begin|header%}
+	    {{CodeName}} = {%CodeName.Default%};
+    {%loop.end|header%}
 	}
 	// 字段类型 字段名
-	{{%loop.header.begin%}}
+	{%loop.end|begin%}
 	{{%=Type%}} {{%=CodeName%}};// {{%=Description%}}
     {{%loop.header.end%}}
 };
