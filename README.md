@@ -142,3 +142,19 @@ void DT_Hero_Config_SetColumn(DT_Hero_Config& rCfg, const std::string& name, con
 ### 数据的类型：csv/json
 ### 定义体为生成的代码
 
+## 需求：
+    从XLSX生成代码。支持任意语言，只需要简单修改一下生成模板，就能生成任意语言。
+    使用极为简单，模板语法非常精简，或者使用非常简单的JAVASCRIPT功能
+    模板实现或者是嵌入脚本实现
+    模板实现：mustache或者mako或者其他不容易与现有代码冲突的替换模板
+    中间用的数据源可以是JSON/CSV/XML/任何格式
+## 思路
+    模板
+        vue：模板实在太难写，全是div
+        inja：能满足大部分需求，但是语法不够精简，需要提供的需求：
+            1、需要join函数，最好是 join(array, spliter, elementLeft, elementRight)，能大大简化模板
+            2、需要能二次解析。{{ {{ASDF}} }} 意思是先解析{{ASDF}}，值为ASDF_VALUE, 再解析{{ASDF_VALUE}}
+## 语言
+        一、集成google V8，搞一套用JSON生成的思路(不太好)
+        二、集成Python,搞一套Python生成的思路(不太好)
+        二、自己实现一套flex and bison

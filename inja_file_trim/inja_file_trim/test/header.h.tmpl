@@ -23,6 +23,17 @@ public:
 {% for key, value in PrimaryKeyTypes) %}
 	{% if length(value) == 1 %}std::map<{{ at(value, 0) }}, {{SheetName}}*> MapItems{{ key }};{% else %}std::map<std::tuple<{% for idx in range(length(value) - 1) %}{{at(value, idx)}}, {% endfor %}{{last(value)}}>, {{SheetName}}*> MapItems{{ key }};{% endif %}{% endfor %}
 public:
+{% for key, value in PrimaryKeyInfos %}
+	const {{SheetName}}* FindByKey{{ key }}({% if value.count == 1 %}const {{at(value.Type, 0))}}& {{at(value.CodeName, 0))}}{%endif%}) const
+	{
+		auto it = MapItems{{ key }}.find({% if value.count == 1 %}{{at(value.CodeName, 0))}}{% else %}make_tuple({%for idx in range(value.count - 1)%}{{at(value.CodeName, idx)}}, {%endfor%}{{last(value.CodeName)}}){% endif %});
+		if (it != MapItems{{ key }}.end())
+		{
+			return it->second;
+		}
+		return nullptr;
+	}
+{% endfor %}
 	const {{SheetName}}* FindByKey1(const uint32& Id) const
 	{
 		auto it = MapItems1.find(Id);

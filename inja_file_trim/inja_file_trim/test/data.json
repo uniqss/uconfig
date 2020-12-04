@@ -7,6 +7,25 @@
 		"2": [ "1", "2" ],
 		"3": [ "3", "4", "5" ]
 	},
+	"PrimaryKeyInfos": {
+		"1": {
+			"count": 1,
+			"CodeName": [ "id" ],
+			"Type": [ "uint32" ]
+		},
+		"2": {
+			"count": 2,
+			"CodeName": [ "type", "name" ],
+			"Type": [ "uint32", "string" ]
+		},
+		"3": {
+			"count": 3,
+			"CodeName": [ "desc", "model_id", "icon" ],
+			"Type": [ "string", "uint32", "string" ]
+		}
+	},
+	"PrimaryKeyCodeNames1": [ "id" ],
+	"PrimaryKeyTypes1": [ "uint32" ],
 	"PrimaryKeyCodeNames": {
 		"1": [ "id" ],
 		"2": [ "type", "name" ],

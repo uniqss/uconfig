@@ -39,6 +39,37 @@ public:
 	std::map<std::tuple<uint32, string>, DT_Hero_Config*> MapItems2;
 	std::map<std::tuple<string, uint32, string>, DT_Hero_Config*> MapItems3;
 public:
+
+	const DT_Hero_Config* FindByKey1(const uint32& id) const
+	{
+		auto it = MapItems1.find(id);
+		if (it != MapItems1.end())
+		{
+			return it->second;
+		}
+		return nullptr;
+	}
+
+	const DT_Hero_Config* FindByKey2() const
+	{
+		auto it = MapItems2.find(make_tuple(type, name));
+		if (it != MapItems2.end())
+		{
+			return it->second;
+		}
+		return nullptr;
+	}
+
+	const DT_Hero_Config* FindByKey3() const
+	{
+		auto it = MapItems3.find(make_tuple(desc, model_id, icon));
+		if (it != MapItems3.end())
+		{
+			return it->second;
+		}
+		return nullptr;
+	}
+
 	const DT_Hero_Config* FindByKey1(const uint32& Id) const
 	{
 		auto it = MapItems1.find(Id);
