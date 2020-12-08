@@ -157,4 +157,4 @@ void DT_Hero_Config_SetColumn(DT_Hero_Config& rCfg, const std::string& name, con
 ## 语言
         一、集成google V8，搞一套用JSON生成的思路(不太好)
         二、集成Python,搞一套Python生成的思路(不太好)
-        二、自己实现一套flex and bison
+        三、自己实现一套flex and bison(flex and bison studying)
