@@ -3,6 +3,7 @@ package xlsxhelper
 import (
 	"fmt"
 	"github.com/tealeg/xlsx"
+	"uconfig/constants"
 )
 
 type XLSXSheetInfo struct {
@@ -36,6 +37,7 @@ func ReadOneXLSX(dir string, excelFileName string, outPutDir string) *XLSXInfo {
 	}
 	for _, sheet := range xlFile.Sheets {
 		sheetInfo := NewXLSXSheetInfo(sheet.Name)
+		constants.SheetNames = append(constants.SheetNames, sheet.Name)
 		//fmt.Printf("Sheet Name: %s\n", sheet.Name)
 		for _, row := range sheet.Rows {
 			var rowInfo []string
