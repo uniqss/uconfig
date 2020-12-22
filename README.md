@@ -155,6 +155,6 @@ void DT_Hero_Config_SetColumn(DT_Hero_Config& rCfg, const std::string& name, con
             1、需要join函数，最好是 join(array, spliter, elementLeft, elementRight)，能大大简化模板
             2、需要能二次解析。{{ {{ASDF}} }} 意思是先解析{{ASDF}}，值为ASDF_VALUE, 再解析{{ASDF_VALUE}}
 ## 语言
-        一、集成google V8，搞一套用JSON生成的思路(不太好)
+        一、集成google V8，搞一套用JSON数据生成的思路，暴出js接口(不太好)
         二、集成Python,搞一套Python生成的思路(不太好)
-        二、自己实现一套flex and bison
+        三、自己实现一套flex and bison(flex and bison studying)
