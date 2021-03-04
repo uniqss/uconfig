@@ -1,1 +1,4 @@
 /uconfig/.idea
+/src/cppcalllua_exe/.vs
+/src/cppcalllua_exe/x64
+/src/cppcalllua_lib/x64

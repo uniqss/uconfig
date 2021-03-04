@@ -20,11 +20,11 @@ local function writeln(str)
     end
 end
 local function camelCase(s)
-	return string.gsub(s, "_%w+", function(word)
-		local first = string.sub(word, 2, 2)
-		local rest = string.sub(word, 3)
-		return string.upper(first) .. rest
-	end)
+    return string.gsub(s, "_%w+", function(word)
+        local first = string.sub(word, 2, 2)
+        local rest = string.sub(word, 3)
+        return string.upper(first) .. rest
+    end)
 end
 local function CamelCase(s)
     local camel = camelCase(s)
@@ -40,6 +40,10 @@ local function transType(ctype)
         return "[]string"
     elseif ctype == "repeated uint32" then
         return "[]uint32"
+    elseif ctype == "float" then
+        return "float64"
+    elseif ctype == "repeated float64" then
+        return "[]float"
     else
         print("type unrecogonized:"..ctype)
     end
@@ -47,15 +51,42 @@ end
 local function getTypeDefault(ctype)
     if ctype == "uint32" then
         return "0"
+    elseif ctype == "float" then
+        return "0"
     elseif ctype == "string" then
         return "\"\""
     elseif ctype == "repeated string" then
         return "nil"
     elseif ctype == "repeated uint32" then
         return "nil"
+    elseif ctype == "repeated float64" then
+        return "nil"
     else
         print("type unrecogonized:"..ctype)
     end
+end
+
+--- Check if a file or directory exists in this path
+function exists(file)
+    local ok, err, code = os.rename(file, file)
+    if not ok then
+        if code == 13 then
+            -- Permission denied, but it exists
+            return true
+        end
+    end
+    return ok, err
+end
+--- Check if a directory exists in this path
+function isdir(path)
+    -- "/" works on both Unix and Windows
+    return exists(path.."/")
+end
+function createDirIfNotExists(path)
+    if isdir(path) then
+        return
+    end
+    os.execute("mkdir " .. path)
 end
 
 function ProcessOneSheet(xlsxName, sheetName, vecNames, vecTypes, vecDescriptions)
@@ -67,7 +98,7 @@ function ProcessOneSheet(xlsxName, sheetName, vecNames, vecTypes, vecDescription
     PrintTable1(vecDescriptions)
     --]]
 
-    os.execute("mkdir " .. outputDir)
+    createDirIfNotExists(outputDir)
 
     -- 取count的最小值
     local count1 = tablelength(vecNames)
@@ -142,11 +173,7 @@ func (m *DT_Hero_Nature_Config) GetQiRate() []uint32 {
     writeln()
 
     writeln("func init() {")
-    writeln("\tDTPreInit()")
-    writeln("\tregister(\""..sheetName.."\", &"..sheetName.."_Data{}, &"..sheetName.."{},")
-    writeln("\t\tfunc(dt interface{}, bt interface{}) {")
-    writeln("\t\t\tdt.(*"..sheetName.."_Data)."..sheetName.."Items[bt.(*"..sheetName..").Id] = bt.(*"..sheetName..")")
-    writeln("\t\t})")
+    writeln("\tregister(\""..sheetName.."\", &"..sheetName.."_Data{}, &"..sheetName.."{})")
     writeln("}")
     writeln()
 
@@ -161,21 +188,31 @@ func (m *DT_Hero_Nature_Config) GetQiRate() []uint32 {
                 writeln("\tdt."..cname.." = DataTableReadUInt32(data, \""..cname.."\", "..realIdx..", \""..sheetName.."\")")
             elseif ctype == "string" then
                 writeln("\tdt."..cname.." = DataTableReadString(data, \""..cname.."\", "..realIdx..", \""..sheetName.."\")")
+            elseif ctype == "float" then
+                writeln("\tdt."..cname.." = DataTableReadFloat(data, \""..cname.."\", "..realIdx..", \""..sheetName.."\")")
             elseif ctype == "[]uint32" then
                 writeln("\tdt."..cname.." = DataTableReadUInt32Arr(data, \""..cname.."\", "..realIdx..", \""..sheetName.."\")")
             elseif ctype == "[]string" then
                 writeln("\tdt."..cname.." = DataTableReadStringArr(data, \""..cname.."\", "..realIdx..", \""..sheetName.."\")")
+            elseif ctype == "[]float" then
+                writeln("\tdt."..cname.." = DataTableReadFloatArr(data, \""..cname.."\", "..realIdx..", \""..sheetName.."\")")
             end
             realIdx = realIdx + 1
         end
     end
+    writeln()
+    writeln("\tGet"..sheetName.."()."..sheetName.."Items[dt.Id] = dt")
     writeln("}")
     writeln()
 
     writeln("func Get"..sheetName.."() *"..sheetName.."_Data {")
     writeln("\treturn get(\""..sheetName.."\").(*"..sheetName.."_Data)")
     writeln("}")
-    
+
     io.close(goFile)
+
+    gofmtCmd = "gofmt.exe -w "..filePath
+    os.execute(gofmtCmd)
+    print("gofmtCmd:"..gofmtCmd)
     return 0
 end
