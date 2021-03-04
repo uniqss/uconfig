@@ -7,3 +7,5 @@
 /bin/*.iobj
 /bin/*.ipdb
 /bin/*.pdb
+/src/cppcalljs/cppcalljs/x64
+/src/cppcalljs/bin/.idea
