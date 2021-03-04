@@ -9,3 +9,5 @@
 /bin/*.pdb
 /src/cppcalljs/cppcalljs/x64
 /src/cppcalljs/bin/.idea
+/bin/*.exp
+/bin/*.lib
