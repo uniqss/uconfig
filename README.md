@@ -19,5 +19,5 @@ uniqs design config generator, xlsx files to definition and data files.
 ```
 ## 实现：
         一、lua. 已实现
-        二、javascript. 未实现
+        二、javascript. 已实现
         三、python. 未实现
