@@ -140,7 +140,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\projects\v8_build\8.8\$(Configuration)\include;..\..\thirdparty\v8pp;..\..\thirdparty\OpenXLSX\library;..\..\uniqs_xlsx_reader</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\thirdparty\v8_build\8.8\$(Configuration)\include;..\..\thirdparty\v8pp;..\..\thirdparty\OpenXLSX\library;..\..\uniqs_xlsx_reader</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -150,7 +150,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>cppgc_base.lib;torque_base.lib;torque_generated_definitions.lib;torque_generated_initializers.lib;v8_base_without_compiler_0.lib;v8_base_without_compiler_1.lib;v8_compiler.lib;v8_cppgc_shared.lib;v8_init.lib;v8_initializers.lib;v8_libbase.lib;v8_libplatform.lib;v8_libsampler.lib;v8_snapshot.lib;wee8.lib;winmm.lib;dbghelp.lib;shlwapi.lib;v8pp.lib;OpenXLSX-shared.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>E:\projects\v8_build\8.8\$(Configuration)\lib;..\..\thirdparty\v8pp\bin\Release;..\..\thirdparty\OpenXLSX\output\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\thirdparty\v8_build\8.8\$(Configuration)\lib;..\..\thirdparty\v8pp\bin\Release;..\..\thirdparty\OpenXLSX\output\$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
