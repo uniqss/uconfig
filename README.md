@@ -10,7 +10,7 @@ uniqs design config generator, xlsx files to definition and data files.
 
 ## 需求：
 ```
-    每一个项目的策划配置都各有特色，每一个项目的服务端、客户端端、脚本等使用配置的场景各有不同。
+    每一个项目的策划配置都各有特色，每一个项目的服务端、客户端、脚本等使用配置的场景各有不同。
     希望有一套能够简单修改就能适配大多数场景需求的策划配置生成代码及数据的体系。uconfig应运而生
     有的人熟悉lua，有的人熟悉javascript，有的人熟悉python。要能让这些人都能简单的修改就能生成想要格式的结构和数据
     从XLSX生成代码。支持任意语言，只需要简单修改一下生成逻辑，就能生成任意语言。
@@ -19,5 +19,5 @@ uniqs design config generator, xlsx files to definition and data files.
 ```
 ## 实现：
         一、lua. 已实现
-        二、javascript. 未实现
+        二、javascript. 已实现(release only.)
         三、python. 未实现
