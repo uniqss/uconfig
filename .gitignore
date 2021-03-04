@@ -2,3 +2,8 @@
 /src/cppcalllua_exe/.vs
 /src/cppcalllua_exe/x64
 /src/cppcalllua_lib/x64
+/src/cppcalljs/.vs
+/src/cppcalljs/x64
+/bin/*.iobj
+/bin/*.ipdb
+/bin/*.pdb
