@@ -23,9 +23,9 @@ uniqs design config generator, xlsx files to definition and data files.
         三、python. 未实现
 ## 使用.lua：
         一、git clone https://github.com/uniqss/uconfig.git  或者下载发布版本
-        二、找到bin里面 cppcalllua_exe.exe OpenXLSX-shared.dll DT_Currency_Config.xlsx uniqs.lua test_generate_go_using_lua.bat gofmt.exe 到
-        你自己的文件夹中，执行test_generate_go_using_lua.bat即可在当前文件夹中生成gen_go文件夹以及一个DT_Currency_Config.go文件。
-        三、说明：生成逻辑在 uniqs.lua 中。 生成路径在 uniqs.lua 的最开头部分。这里只是展示，生成的是go，可以生成其他任何语言的文件，也可以组织数据文
-        件。生成代码有用到 os.execute 进行 gofmt操作，把文件格式化，如果其他语言有自己写的exe可以格式化，也可以执行。或者是对生成的代码做任何后续操
-        作，也可以类似执行。test_generate_go_using_lua.bat 中有传一个6，这个参数是限制读取xlsx 的最大行数，也可以再在后面加一个限制列数。因为我们在
-        生成代码的时候，只需要读取表头，并不需要对表的数据做什么操作。所以这里加了限制读取最大行数的功能来提高性能。
+        二、找到bin里面 cppcalllua_exe.exe OpenXLSX-shared.dll DT_Currency_Config.xlsx uniqs.lua test_generate_go_using_lua.bat 
+        gofmt.exe 到你自己的文件夹中，执行test_generate_go_using_lua.bat即可在当前文件夹中生成gen_go文件夹以及一个DT_Currency_Config.go文件。
+        三、说明：生成逻辑在 uniqs.lua 中。 生成路径在 uniqs.lua 的最开头部分。这里只是展示，生成的是go，可以生成其他任何语言的文件，也可以组织数
+        据文件。生成代码有用到 os.execute 进行 gofmt操作，把文件格式化，如果其他语言有自己写的exe可以格式化，也可以执行。或者是对生成的代码做任何
+        后续操作，也可以类似执行。test_generate_go_using_lua.bat 中有传一个6，这个参数是限制读取xlsx 的最大行数，也可以再在后面加一个限制列数。
+        因为我们在生成代码的时候，只需要读取表头，并不需要对表的数据做什么操作。所以这里加了限制读取最大行数的功能来提高性能。
