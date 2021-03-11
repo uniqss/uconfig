@@ -19,72 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\thirdparty\LuaBridge\Tests\Lua\LuaLibrary.h" />
     <ClInclude Include="cppcalllua_lib.h" />
-    <ClInclude Include="lua542\lapi.h" />
-    <ClInclude Include="lua542\lauxlib.h" />
-    <ClInclude Include="lua542\lcode.h" />
-    <ClInclude Include="lua542\lctype.h" />
-    <ClInclude Include="lua542\ldebug.h" />
-    <ClInclude Include="lua542\ldo.h" />
-    <ClInclude Include="lua542\lfunc.h" />
-    <ClInclude Include="lua542\lgc.h" />
-    <ClInclude Include="lua542\ljumptab.h" />
-    <ClInclude Include="lua542\llex.h" />
-    <ClInclude Include="lua542\llimits.h" />
-    <ClInclude Include="lua542\lmem.h" />
-    <ClInclude Include="lua542\lobject.h" />
-    <ClInclude Include="lua542\lopcodes.h" />
-    <ClInclude Include="lua542\lopnames.h" />
-    <ClInclude Include="lua542\lparser.h" />
-    <ClInclude Include="lua542\lprefix.h" />
-    <ClInclude Include="lua542\lstate.h" />
-    <ClInclude Include="lua542\lstring.h" />
-    <ClInclude Include="lua542\ltable.h" />
-    <ClInclude Include="lua542\ltm.h" />
-    <ClInclude Include="lua542\lua.h" />
-    <ClInclude Include="lua542\lua.hpp" />
-    <ClInclude Include="lua542\luaconf.h" />
-    <ClInclude Include="lua542\lualib.h" />
-    <ClInclude Include="lua542\lundump.h" />
-    <ClInclude Include="lua542\lvm.h" />
-    <ClInclude Include="lua542\lzio.h" />
     <ClInclude Include="LuaStackAutoProtector.h" />
+    <ClInclude Include="lua_tableoftable.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cppcalllua_lib.cpp" />
-    <ClCompile Include="lua542\lapi.c" />
-    <ClCompile Include="lua542\lauxlib.c" />
-    <ClCompile Include="lua542\lbaselib.c" />
-    <ClCompile Include="lua542\lcode.c" />
-    <ClCompile Include="lua542\lcorolib.c" />
-    <ClCompile Include="lua542\lctype.c" />
-    <ClCompile Include="lua542\ldblib.c" />
-    <ClCompile Include="lua542\ldebug.c" />
-    <ClCompile Include="lua542\ldo.c" />
-    <ClCompile Include="lua542\ldump.c" />
-    <ClCompile Include="lua542\lfunc.c" />
-    <ClCompile Include="lua542\lgc.c" />
-    <ClCompile Include="lua542\linit.c" />
-    <ClCompile Include="lua542\liolib.c" />
-    <ClCompile Include="lua542\llex.c" />
-    <ClCompile Include="lua542\lmathlib.c" />
-    <ClCompile Include="lua542\lmem.c" />
-    <ClCompile Include="lua542\loadlib.c" />
-    <ClCompile Include="lua542\lobject.c" />
-    <ClCompile Include="lua542\lopcodes.c" />
-    <ClCompile Include="lua542\loslib.c" />
-    <ClCompile Include="lua542\lparser.c" />
-    <ClCompile Include="lua542\lstate.c" />
-    <ClCompile Include="lua542\lstring.c" />
-    <ClCompile Include="lua542\lstrlib.c" />
-    <ClCompile Include="lua542\ltable.c" />
-    <ClCompile Include="lua542\ltablib.c" />
-    <ClCompile Include="lua542\ltm.c" />
-    <ClCompile Include="lua542\lua.c" />
-    <ClCompile Include="lua542\lundump.c" />
-    <ClCompile Include="lua542\lutf8lib.c" />
-    <ClCompile Include="lua542\lvm.c" />
-    <ClCompile Include="lua542\lzio.c" />
+    <ClCompile Include="..\thirdparty\LuaBridge\Tests\Lua\LuaLibrary5.2.0.cpp" />
+    <ClCompile Include="cppcalllua_lib_xlsxall.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -190,7 +132,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\lua542;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\lua542;..\thirdparty\LuaBridge\Tests\Lua;..\thirdparty\LuaBridge\Source;..\thirdparty\LuaBridge\Tests;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -207,7 +149,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\lua542;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\lua542;..\thirdparty\LuaBridge\Tests\Lua;..\thirdparty\LuaBridge\Source;..\thirdparty\LuaBridge\Tests;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>

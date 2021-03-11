@@ -13,8 +13,8 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="lua542">
-      <UniqueIdentifier>{41e9d866-a488-4816-bacd-ceb5a21f0d4a}</UniqueIdentifier>
+    <Filter Include="Lua52">
+      <UniqueIdentifier>{53fb9366-abb0-45f6-8d48-05abe86717b4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,193 +24,19 @@
     <ClInclude Include="cppcalllua_lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="lua542\lapi.h">
-      <Filter>lua542</Filter>
+    <ClInclude Include="lua_tableoftable.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="lua542\lauxlib.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lcode.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lctype.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\ldebug.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\ldo.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lfunc.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lgc.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\ljumptab.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\llex.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\llimits.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lmem.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lobject.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lopcodes.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lopnames.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lparser.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lprefix.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lstate.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lstring.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\ltable.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\ltm.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lua.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lua.hpp">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\luaconf.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lualib.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lundump.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lvm.h">
-      <Filter>lua542</Filter>
-    </ClInclude>
-    <ClInclude Include="lua542\lzio.h">
-      <Filter>lua542</Filter>
+    <ClInclude Include="..\thirdparty\LuaBridge\Tests\Lua\LuaLibrary.h">
+      <Filter>Lua52</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cppcalllua_lib.cpp">
+    <ClCompile Include="..\thirdparty\LuaBridge\Tests\Lua\LuaLibrary5.2.0.cpp">
+      <Filter>Lua52</Filter>
+    </ClCompile>
+    <ClCompile Include="cppcalllua_lib_xlsxall.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lapi.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lauxlib.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lbaselib.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lcode.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lcorolib.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lctype.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\ldblib.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\ldebug.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\ldo.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\ldump.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lfunc.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lgc.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\linit.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\liolib.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\llex.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lmathlib.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lmem.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\loadlib.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lobject.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lopcodes.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\loslib.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lparser.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lstate.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lstring.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lstrlib.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\ltable.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\ltablib.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\ltm.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lua.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lundump.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lutf8lib.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lvm.c">
-      <Filter>lua542</Filter>
-    </ClCompile>
-    <ClCompile Include="lua542\lzio.c">
-      <Filter>lua542</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

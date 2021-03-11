@@ -6,6 +6,14 @@ local function PrintTable1(vecDatas)
         print("\t "..tKey.." => "..tValue)
     end
 end
+local function PrintTable2(vecDatas)
+    print("lua table elements:"..#vecDatas)
+    for i=1,#vecDatas do
+        for j=1,#vecDatas[i] do
+            print(i..j.." => "..vecDatas[i][j])
+        end
+    end
+end
 local function tablelength(T)
     local count = 0
     for _ in pairs(T) do count = count + 1 end
@@ -87,6 +95,14 @@ function createDirIfNotExists(path)
         return
     end
     os.execute("mkdir " .. path)
+end
+
+function ProcessOneSheetAllData(xlsxName, sheetName, vecDatas)
+    print("xlsxName:" .. xlsxName)
+    print("sheetName:" .. sheetName)
+    -- PrintTable1(vecDatas[1])
+    -- PrintTable2(vecDatas);
+    return ProcessOneSheet(xlsxName, sheetName, vecDatas[2], vecDatas[3], vecDatas[5])
 end
 
 function ProcessOneSheet(xlsxName, sheetName, vecNames, vecTypes, vecDescriptions)

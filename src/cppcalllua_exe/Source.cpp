@@ -27,10 +27,14 @@ int main(int argc, const char** argv)
 	int ret = 0;
 	for (const auto& it : vecxlsx)
 	{
+#if 0
 		if (it.second.size() > 5)
 		{
 			ret = ProcessOneSheet(argv[1], it.first, it.second[1], it.second[2], it.second[4]);
 		}
+#else
+		ret = ProcessOneSheetAllData(argv[1], it.first, it.second);
+#endif
 	}
 
 #if 0
