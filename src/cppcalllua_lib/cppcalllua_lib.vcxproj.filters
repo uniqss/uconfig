@@ -24,9 +24,6 @@
     <ClInclude Include="cppcalllua_lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="lua_tableoftable.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\thirdparty\LuaBridge\Tests\Lua\LuaLibrary.h">
       <Filter>Lua52</Filter>
     </ClInclude>

@@ -22,7 +22,6 @@
     <ClInclude Include="..\thirdparty\LuaBridge\Tests\Lua\LuaLibrary.h" />
     <ClInclude Include="cppcalllua_lib.h" />
     <ClInclude Include="LuaStackAutoProtector.h" />
-    <ClInclude Include="lua_tableoftable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\thirdparty\LuaBridge\Tests\Lua\LuaLibrary5.2.0.cpp" />
