@@ -1,13 +1,6 @@
 # uniqsconfiggenerator -- uconfig in short
 uniqs design config generator, xlsx files to definition and data files. 
 
-## supported languages: C/C++/Go/Lua/Js/Java/Python/Anything......(change generation logic code yourself)
-## generation language: lua/javascript/python
-## 生成语言：lua/javascript/python中的任意一个
-
-### 数据的类型：csv/json/xml/anything......
-### 
-
 ## 需求：
 ```
     每一个项目的策划配置都各有特色，每一个项目的服务端、客户端、脚本等使用配置的场景各有不同。
