@@ -54,12 +54,12 @@ int read_xlsx(
 	vecResult.clear();
 
 	uint32_t rowIdxMax = maxRows;
-	if (maxRows == -1)
+	if (maxRows <= 0)
 	{
 		rowIdxMax = std::numeric_limits<unsigned>::max();
 	}
 	uint32_t colIdxMax = maxCols;
-	if (maxCols == -1)
+	if (maxCols <= 0)
 	{
 		colIdxMax = std::numeric_limits<unsigned>::max();
 	}
