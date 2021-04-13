@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Lua52">
-      <UniqueIdentifier>{53fb9366-abb0-45f6-8d48-05abe86717b4}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LuaStackAutoProtector.h">
@@ -24,15 +21,18 @@
     <ClInclude Include="cppcalllua_lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\thirdparty\LuaBridge\Tests\Lua\LuaLibrary.h">
-      <Filter>Lua52</Filter>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jass_luastate.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\thirdparty\LuaBridge\Tests\Lua\LuaLibrary5.2.0.cpp">
-      <Filter>Lua52</Filter>
-    </ClCompile>
     <ClCompile Include="cppcalllua_lib_xlsxall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jass_luastate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

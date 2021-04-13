@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Lua/LuaLibrary.h"
+#include "pch.h"
 
 class LuaStackAutoProtector
 {

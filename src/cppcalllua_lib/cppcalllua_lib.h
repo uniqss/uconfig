@@ -12,3 +12,10 @@ int ProcessOneSheet(const std::string& xlsxName,
 
 int ProcessOneSheetAllData(const std::string& xlsxName, const std::string& sheetName,
 	const std::vector < std::vector<std::string>>& datas);
+
+int BeforeProcess();
+
+int ProcessOneSheetAllDataSol2(const std::string& xlsxName, const std::string& sheetName,
+	const std::vector < std::vector<std::string>>& datas);
+
+int AfterProcess();

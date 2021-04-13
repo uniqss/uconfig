@@ -21,10 +21,22 @@
     <ClCompile Include="..\uniqs_xlsx_reader\uniqs_xlsx_reader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pugixml.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\uniqs_xlsx_reader\uniqs_xlsx_reader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="pugixml.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pugiconfig.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\bin\uniqs.lua" />
   </ItemGroup>
 </Project>

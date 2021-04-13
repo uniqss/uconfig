@@ -1,0 +1,6 @@
+<root>
+	<!-- the directory where .xlsx files are.   需要生成的策划配置文件夹路径 -->
+	<directory>../xlsx_config/</directory>
+	<maxRowCount></maxRowCount>
+	<maxColCount></maxColCount>
+</root>

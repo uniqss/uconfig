@@ -1,54 +1,69 @@
 #include "cppcalllua_lib.h"
 #include "uniqs_xlsx_reader.h"
 
+#include "pugixml.hpp"
+
+#include <filesystem>
+
+void help()
+{
+	printf("./uniqs.xml must exist.");
+}
+
 int main(int argc, const char** argv)
 {
-	std::vector<std::pair<std::string, std::vector<std::vector<std::string> > > > vecxlsx;
-
-	if (argc < 2)
+	pugi::xml_document doc;
+	auto result = doc.load_file("./uniqs.xml");
+	if (!result)
 	{
-		printf("usage: %s xlsxFileName [maxRowCount [maxColCount]] \n", argv[0]);
+		help();
 		return -1;
 	}
-
-	int maxRows = -1;
-	if (argc > 2)
+	auto root = doc.child("root");
+	if (root.empty())
 	{
-		maxRows = std::atoi(argv[2]);
+		help();
+		return -1;
 	}
-	int maxCols = -1;
-	if (argc > 3)
-	{
-		maxCols = std::atoi(argv[3]);
-	}
+	std::string xlsxDirectory = root.child("directory").text().as_string("");
+	int maxRowCount = root.child("maxRowCount").text().as_int(-1);
+	int maxColCount = root.child("maxColCount").text().as_int(-1);
 
-	read_xlsx(argv[1], vecxlsx, maxRows, maxCols);
+	const std::filesystem::path path{ xlsxDirectory.empty() ? std::filesystem::current_path() : xlsxDirectory };
 
-	int ret = 0;
-	for (const auto& it : vecxlsx)
+	BeforeProcess();
+
+	for (const auto& entry : std::filesystem::directory_iterator(path))
 	{
-#if 0
-		if (it.second.size() > 5)
+		const auto filenameStr = entry.path().filename().string();
+		if (entry.is_directory())
 		{
-			ret = ProcessOneSheet(argv[1], it.first, it.second[1], it.second[2], it.second[4]);
+			continue;
 		}
-#else
-		ret = ProcessOneSheetAllData(argv[1], it.first, it.second);
-#endif
+		else if (!entry.is_regular_file())
+		{
+			continue;
+		}
+
+		const auto pathString = entry.path().string();
+
+		printf(pathString.c_str());
+
+		std::vector<std::pair<std::string, std::vector<std::vector<std::string> > > > vecxlsx;
+		read_xlsx(pathString, vecxlsx, maxRowCount, maxColCount);
+		int ret = 0;
+		for (const auto& it : vecxlsx)
+		{
+			ret = ProcessOneSheetAllDataSol2(pathString, it.first, it.second);
+			if (ret != 0)
+			{
+				printf("ProcessOneSheetAllDataSol2 not ok. ret:%d\n", ret);
+				return ret;
+			}
+		}
 	}
 
-#if 0
-	std::string xlsxName = "testXlsxName";
-	std::string sheetName = "testSheetName";
-
-	std::vector<std::string> vecNames = { "aaaaa", "bbbbb", "cccc", "ddddd", "1111", "2222" };
-	std::vector<std::string> vecTypes = { "string", "string", "string", "string", "int", "int" };
-	std::vector<std::string> vecDescriptions = { "hello", "world", "", "ddddddddd", "ddd111", "ddd2222" };
-
-	int ret = ProcessOneSheet(xlsxName, sheetName, vecNames, vecTypes, vecDescriptions);
-
-	printf("ret:%d\n", ret);
-#endif
+	AfterProcess();
 
 	return 0;
 }

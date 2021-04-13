@@ -19,13 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\thirdparty\LuaBridge\Tests\Lua\LuaLibrary.h" />
     <ClInclude Include="cppcalllua_lib.h" />
+    <ClInclude Include="jass_luastate.h" />
     <ClInclude Include="LuaStackAutoProtector.h" />
+    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\thirdparty\LuaBridge\Tests\Lua\LuaLibrary5.2.0.cpp" />
     <ClCompile Include="cppcalllua_lib_xlsxall.cpp" />
+    <ClCompile Include="jass_luastate.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -131,8 +132,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.;.\lua542;..\thirdparty\LuaBridge\Tests\Lua;..\thirdparty\LuaBridge\Source;..\thirdparty\LuaBridge\Tests;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..\thirdparty\sol2\include;..\thirdparty\sol2\vendor\lua-5.3.5\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -148,8 +150,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.;.\lua542;..\thirdparty\LuaBridge\Tests\Lua;..\thirdparty\LuaBridge\Source;..\thirdparty\LuaBridge\Tests;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..\thirdparty\sol2\include;..\thirdparty\sol2\vendor\lua-5.3.5\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
