@@ -1,3 +1,6 @@
 [submodule "src/thirdparty/OpenXLSX"]
 	path = src/thirdparty/OpenXLSX
 	url = https://github.com/troldal/OpenXLSX.git
+[submodule "src/thirdparty/sol2"]
+	path = src/thirdparty/sol2
+	url = https://github.com/ThePhD/sol2.git
