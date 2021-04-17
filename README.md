@@ -11,7 +11,7 @@ uniqs design config generator, xlsx files to definition and data files.
     嵌入脚本实现
 ```
 ## 实现：
-        一、lua. 已实现    https://github.com/uniqss/uconfiglua.git
+        一、[lua implemention(implemented.)](https://github.com/uniqss/uconfiglua.git)
         二、javascript. 已实现(release only.)   https://github.com/uniqss/uconfigjs.git
         三、python. 未实现      https://github.com/uniqss/uconfigpython.git
 ## 使用.lua：
