@@ -10,10 +10,13 @@ uniqs design config generator, xlsx files to definition and data files.
     使用极为简单，生成逻辑与读取XLSX分离，使用非常简单的脚本语言lua/javascript/python
     嵌入脚本实现
 ```
-## 实现：
-        一、[lua implemention](https://github.com/uniqss/uconfiglua.git)
-        二、javascript. 已实现(release only.)   https://github.com/uniqss/uconfigjs.git
-        三、python. 未实现      https://github.com/uniqss/uconfigpython.git
+## Implemention：
+index | language | implemention | link
+------ | ------ | ------ | ------
+I. | lua | implemented | [https://github.com/uniqss/uconfiglua.git](https://github.com/uniqss/uconfiglua.git)
+II. | js | implemented | [https://github.com/uniqss/uconfigjs.git](https://github.com/uniqss/uconfigjs.git)
+III. | python | not implemented | [https://github.com/uniqss/uconfigpython.git](https://github.com/uniqss/uconfigpython.git)
+
 ## 使用.lua：
         一、git clone https://github.com/uniqss/uconfig.git  或者下载发布版本
         二、找到bin里面 cppcalllua_exe.exe OpenXLSX-shared.dll DT_Currency_Config.xlsx uniqs.lua test_generate_go_using_lua.bat 
