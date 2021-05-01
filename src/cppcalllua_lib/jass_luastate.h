@@ -5,7 +5,7 @@
 class jass_luastate
 {
 public:
-	void init();
+	void init(const std::string& scriptsPath);
 public:
 	sol::state luastate;
 };

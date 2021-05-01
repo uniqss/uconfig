@@ -49,13 +49,13 @@ int ProcessOneSheetAllData(const std::string& xlsxName, const std::string& sheet
 
 jass_luastate luastate;
 
-int BeforeProcess()
+int BeforeProcess(const std::string& scriptsPath)
 {
 	int ret = 0;
 	
-	luastate.init();
+	luastate.init(scriptsPath);
 	sol::state_view lua = luastate.luastate;
-	lua.script_file("../scripts/uniqs.lua");
+	lua.script_file(scriptsPath + "uniqs.lua");
 
 	return ret;
 }

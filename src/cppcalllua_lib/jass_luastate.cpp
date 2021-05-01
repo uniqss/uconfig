@@ -28,7 +28,7 @@ int LoadFileRequire(lua_State* L) {
 	return 1;
 }
 
-void jass_luastate::init()
+void jass_luastate::init(const std::string& scriptsPath)
 {
 	luastate.open_libraries(
 		sol::lib::base
@@ -52,5 +52,5 @@ void jass_luastate::init()
 	//luastate.add_package_loader(LoadFileRequire);
 
 	const std::string package_path = luastate["package"]["path"];
-	luastate["package"]["path"] = package_path + (!package_path.empty() ? ";" : "") + "./?.lua" + ";../scripts/?.lua";
+	luastate["package"]["path"] = package_path + (!package_path.empty() ? ";" : "") + "./?.lua;" + scriptsPath +"?.lua";
 }

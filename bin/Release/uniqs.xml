@@ -3,4 +3,6 @@
 	<directory>../xlsx_config/</directory>
 	<maxRowCount></maxRowCount>
 	<maxColCount></maxColCount>
+	<!-- scripts path. -->
+	<scriptsPath>../scripts/</scriptsPath>
 </root>

@@ -28,10 +28,19 @@ int main(int argc, const char** argv)
 	std::string xlsxDirectory = root.child("directory").text().as_string("");
 	int maxRowCount = root.child("maxRowCount").text().as_int(-1);
 	int maxColCount = root.child("maxColCount").text().as_int(-1);
+	std::string scriptsPath = root.child("scriptsPath").text().as_string("./");
+	if (scriptsPath == "")
+	{
+		scriptsPath = "./";
+	}
+	if (scriptsPath[scriptsPath.size() - 1] != '/')
+	{
+		scriptsPath = scriptsPath + '/';
+	}
 
 	const std::filesystem::path path{ xlsxDirectory.empty() ? std::filesystem::current_path() : xlsxDirectory };
 
-	BeforeProcess();
+	BeforeProcess(scriptsPath);
 
 	for (const auto& entry : std::filesystem::directory_iterator(path))
 	{
