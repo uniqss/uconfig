@@ -1,24 +1,7 @@
+local utility = require("utility")
+
 local outputDir = "gen_go"
 local goFile = nil
-local function PrintTable1(vecDatas)
-    print("lua table elements:")
-    for tKey, tValue in pairs(vecDatas) do
-        print("\t "..tKey.." => "..tValue)
-    end
-end
-local function PrintTable2(vecDatas)
-    print("lua table elements:"..#vecDatas)
-    for i=1,#vecDatas do
-        for j=1,#vecDatas[i] do
-            print(i..j.." => "..vecDatas[i][j])
-        end
-    end
-end
-local function tablelength(T)
-    local count = 0
-    for _ in pairs(T) do count = count + 1 end
-    return count
-end
 
 local function writeln(str)
     if str ~= nil then
@@ -26,18 +9,6 @@ local function writeln(str)
     else
         goFile:write("\n")
     end
-end
-local function camelCase(s)
-    return string.gsub(s, "_%w+", function(word)
-        local first = string.sub(word, 2, 2)
-        local rest = string.sub(word, 3)
-        return string.upper(first) .. rest
-    end)
-end
-local function CamelCase(s)
-    local camel = camelCase(s)
-    --print("camel:"..camel)
-    return (camel:gsub("^%l", string.upper))
 end
 local function transType(ctype)
     if ctype == "uint32" then
@@ -74,34 +45,11 @@ local function getTypeDefault(ctype)
     end
 end
 
---- Check if a file or directory exists in this path
-function exists(file)
-    local ok, err, code = os.rename(file, file)
-    if not ok then
-        if code == 13 then
-            -- Permission denied, but it exists
-            return true
-        end
-    end
-    return ok, err
-end
---- Check if a directory exists in this path
-function isdir(path)
-    -- "/" works on both Unix and Windows
-    return exists(path.."/")
-end
-function createDirIfNotExists(path)
-    if isdir(path) then
-        return
-    end
-    os.execute("mkdir " .. path)
-end
-
 function ProcessOneSheetAllData(xlsxName, sheetName, vecDatas)
     print("xlsxName:" .. xlsxName)
     print("sheetName:" .. sheetName)
-    -- PrintTable1(vecDatas[1])
-    -- PrintTable2(vecDatas);
+    -- utility.PrintTable1(vecDatas[1])
+    -- utility.PrintTable2(vecDatas);
     return ProcessOneSheet(xlsxName, sheetName, vecDatas[2], vecDatas[3], vecDatas[5])
 end
 
@@ -109,17 +57,17 @@ function ProcessOneSheet(xlsxName, sheetName, vecNames, vecTypes, vecDescription
     --[[
     print("xlsxName:" .. xlsxName)
     print("sheetName:" .. sheetName)
-    PrintTable1(vecNames)
-    PrintTable1(vecTypes)
-    PrintTable1(vecDescriptions)
+    utility.PrintTable1(vecNames)
+    utility.PrintTable1(vecTypes)
+    utility.PrintTable1(vecDescriptions)
     --]]
 
-    createDirIfNotExists(outputDir)
+    utility.createDirIfNotExists(outputDir)
 
     -- 取count的最小值
-    local count1 = tablelength(vecNames)
-    local count2 = tablelength(vecTypes)
-    local count3 = tablelength(vecDescriptions)
+    local count1 = utility.tablelength(vecNames)
+    local count2 = utility.tablelength(vecTypes)
+    local count3 = utility.tablelength(vecDescriptions)
     local count = math.min(count1, count2)
     count = math.min(count, count3)
 
@@ -144,7 +92,7 @@ function ProcessOneSheet(xlsxName, sheetName, vecNames, vecTypes, vecDescription
         if cname ~= nil and cname ~= "" and ctype ~= nil and ctype ~= "" then
             ctype = transType(ctype)
             local cdesc = vecDescriptions[idx]
-            writeln("\t"..CamelCase(cname).." "..ctype.."  `db:\""..cname.."\"` // "..cdesc)
+            writeln("\t"..utility.CamelCase(cname).." "..ctype.."  `db:\""..cname.."\"` // "..cdesc)
         end
     end
     writeln("}")
@@ -159,7 +107,7 @@ func (m *DT_Hero_Nature_Config) GetQiRate() []uint32 {
 	return nil
 }
         --]]
-        local cname = CamelCase(vecNames[idx])
+        local cname = utility.CamelCase(vecNames[idx])
         local ctype = vecTypes[idx]
         if cname ~= nil and cname ~= "" and ctype ~= nil and ctype ~= "" then
             ctype = transType(ctype)
@@ -196,7 +144,7 @@ func (m *DT_Hero_Nature_Config) GetQiRate() []uint32 {
     writeln("func (dt *"..sheetName..")FromData(data []interface{}) {")
     local realIdx = 0
     for idx = 1, count do
-        local cname = CamelCase(vecNames[idx])
+        local cname = utility.CamelCase(vecNames[idx])
         local ctype = vecTypes[idx]
         if cname ~= nil and cname ~= "" and ctype ~= nil and ctype ~= "" then
             ctype = transType(ctype)

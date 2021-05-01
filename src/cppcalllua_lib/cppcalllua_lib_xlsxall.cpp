@@ -65,6 +65,11 @@ int ProcessOneSheetAllDataSol2(const std::string& xlsxName, const std::string& s
 {
 	sol::state_view lua = luastate.luastate;
 	sol::function func = lua["ProcessOneSheetAllData"];
+	if (!func.valid())
+	{
+		printf("ProcessOneSheetAllDataSol2 lua function ProcessOneSheetAllData load error.\n");
+		return -1;
+	}
 	int result = func(xlsxName, sheetName, datas);
 	return result;
 }
