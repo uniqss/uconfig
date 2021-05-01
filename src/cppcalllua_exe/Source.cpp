@@ -7,7 +7,7 @@
 
 void help()
 {
-	printf("./uniqs.xml must exist.");
+	printf("./uniqs.xml must exist.\n");
 }
 
 int main(int argc, const char** argv)
@@ -38,6 +38,17 @@ int main(int argc, const char** argv)
 		scriptsPath = scriptsPath + '/';
 	}
 
+	std::vector<std::string> functions;
+	for (auto child : root.child("functions").children("function"))
+	{
+		auto function = child.text().as_string();
+
+		//printf("xxxxx %s\n", child.text().as_string());
+
+		functions.push_back(function);
+	}
+
+
 	const std::filesystem::path path{ xlsxDirectory.empty() ? std::filesystem::current_path() : xlsxDirectory };
 
 	BeforeProcess(scriptsPath);
@@ -56,18 +67,21 @@ int main(int argc, const char** argv)
 
 		const auto pathString = entry.path().string();
 
-		printf(pathString.c_str());
+		printf("%s\n", pathString.c_str());
 
 		std::vector<std::pair<std::string, std::vector<std::vector<std::string> > > > vecxlsx;
 		read_xlsx(pathString, vecxlsx, maxRowCount, maxColCount);
 		int ret = 0;
 		for (const auto& it : vecxlsx)
 		{
-			ret = ProcessOneSheetAllDataSol2(pathString, it.first, it.second);
-			if (ret != 0)
+			for (const std::string& function : functions)
 			{
-				printf("ProcessOneSheetAllDataSol2 not ok. ret:%d\n", ret);
-				return ret;
+				ret = ProcessOneSheetAllDataSol2(function, pathString, it.first, it.second);
+				if (ret != 0)
+				{
+					printf("ProcessOneSheetAllDataSol2 not ok function:%s pathString:%s. ret:%d\n", function.c_str(), pathString.c_str(), ret);
+					return ret;
+				}
 			}
 		}
 	}

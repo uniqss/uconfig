@@ -45,6 +45,12 @@ local function getTypeDefault(ctype)
     end
 end
 
+function JustPrint(xlsxName, sheetName, vecDatas)
+    print("###JustPrint  xlsxName:" .. xlsxName)
+    print("###JustPrint  sheetName:" .. sheetName)
+    return 0
+end
+
 function ProcessOneSheetAllData(xlsxName, sheetName, vecDatas)
     print("xlsxName:" .. xlsxName)
     print("sheetName:" .. sheetName)

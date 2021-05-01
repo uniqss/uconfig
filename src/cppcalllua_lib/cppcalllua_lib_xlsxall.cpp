@@ -60,14 +60,14 @@ int BeforeProcess(const std::string& scriptsPath)
 	return ret;
 }
 
-int ProcessOneSheetAllDataSol2(const std::string& xlsxName, const std::string& sheetName,
+int ProcessOneSheetAllDataSol2(const std::string& function, const std::string& xlsxName, const std::string& sheetName,
 	const std::vector < std::vector<std::string>>& datas)
 {
 	sol::state_view lua = luastate.luastate;
-	sol::function func = lua["ProcessOneSheetAllData"];
+	sol::function func = lua[function];
 	if (!func.valid())
 	{
-		printf("ProcessOneSheetAllDataSol2 lua function ProcessOneSheetAllData load error.\n");
+		printf("ProcessOneSheetAllDataSol2 lua function [%s] load error.\n", function.c_str());
 		return -1;
 	}
 	int result = func(xlsxName, sheetName, datas);

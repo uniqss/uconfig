@@ -5,4 +5,8 @@
 	<maxColCount></maxColCount>
 	<!-- scripts path. -->
 	<scriptsPath>../scripts/</scriptsPath>
+	<functions>
+		<function>JustPrint</function>
+		<function>ProcessOneSheetAllData</function>
+	</functions>
 </root>
