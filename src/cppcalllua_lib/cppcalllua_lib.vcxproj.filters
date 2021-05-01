@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="lua53">
+      <UniqueIdentifier>{2d6c19ea-0899-4deb-aa38-1fee171cbb9e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LuaStackAutoProtector.h">
@@ -27,6 +30,84 @@
     <ClInclude Include="jass_luastate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lapi.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lauxlib.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lcode.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lctype.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\ldebug.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\ldo.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lfunc.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lgc.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\llex.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\llimits.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lmem.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lobject.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lopcodes.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lparser.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lprefix.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lstate.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lstring.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\ltable.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\ltm.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lua.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lua.hpp">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\luaconf.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lualib.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lundump.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lvm.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\lua53\lzio.h">
+      <Filter>lua53</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cppcalllua_lib_xlsxall.cpp">
@@ -34,6 +115,108 @@
     </ClCompile>
     <ClCompile Include="jass_luastate.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lapi.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lauxlib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lbaselib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lbitlib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lcode.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lcorolib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lctype.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\ldblib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\ldebug.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\ldo.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\ldump.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lfunc.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lgc.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\linit.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\liolib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\llex.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lmathlib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lmem.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\loadlib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lobject.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lopcodes.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\loslib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lparser.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lstate.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lstring.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lstrlib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\ltable.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\ltablib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\ltm.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lundump.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lutf8lib.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lvm.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\lzio.c">
+      <Filter>lua53</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\lua53\wmain.c">
+      <Filter>lua53</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

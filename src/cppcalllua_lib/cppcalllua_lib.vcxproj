@@ -19,12 +19,72 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\thirdparty\lua53\lapi.h" />
+    <ClInclude Include="..\thirdparty\lua53\lauxlib.h" />
+    <ClInclude Include="..\thirdparty\lua53\lcode.h" />
+    <ClInclude Include="..\thirdparty\lua53\lctype.h" />
+    <ClInclude Include="..\thirdparty\lua53\ldebug.h" />
+    <ClInclude Include="..\thirdparty\lua53\ldo.h" />
+    <ClInclude Include="..\thirdparty\lua53\lfunc.h" />
+    <ClInclude Include="..\thirdparty\lua53\lgc.h" />
+    <ClInclude Include="..\thirdparty\lua53\llex.h" />
+    <ClInclude Include="..\thirdparty\lua53\llimits.h" />
+    <ClInclude Include="..\thirdparty\lua53\lmem.h" />
+    <ClInclude Include="..\thirdparty\lua53\lobject.h" />
+    <ClInclude Include="..\thirdparty\lua53\lopcodes.h" />
+    <ClInclude Include="..\thirdparty\lua53\lparser.h" />
+    <ClInclude Include="..\thirdparty\lua53\lprefix.h" />
+    <ClInclude Include="..\thirdparty\lua53\lstate.h" />
+    <ClInclude Include="..\thirdparty\lua53\lstring.h" />
+    <ClInclude Include="..\thirdparty\lua53\ltable.h" />
+    <ClInclude Include="..\thirdparty\lua53\ltm.h" />
+    <ClInclude Include="..\thirdparty\lua53\lua.h" />
+    <ClInclude Include="..\thirdparty\lua53\lua.hpp" />
+    <ClInclude Include="..\thirdparty\lua53\luaconf.h" />
+    <ClInclude Include="..\thirdparty\lua53\lualib.h" />
+    <ClInclude Include="..\thirdparty\lua53\lundump.h" />
+    <ClInclude Include="..\thirdparty\lua53\lvm.h" />
+    <ClInclude Include="..\thirdparty\lua53\lzio.h" />
     <ClInclude Include="cppcalllua_lib.h" />
     <ClInclude Include="jass_luastate.h" />
     <ClInclude Include="LuaStackAutoProtector.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\thirdparty\lua53\lapi.c" />
+    <ClCompile Include="..\thirdparty\lua53\lauxlib.c" />
+    <ClCompile Include="..\thirdparty\lua53\lbaselib.c" />
+    <ClCompile Include="..\thirdparty\lua53\lbitlib.c" />
+    <ClCompile Include="..\thirdparty\lua53\lcode.c" />
+    <ClCompile Include="..\thirdparty\lua53\lcorolib.c" />
+    <ClCompile Include="..\thirdparty\lua53\lctype.c" />
+    <ClCompile Include="..\thirdparty\lua53\ldblib.c" />
+    <ClCompile Include="..\thirdparty\lua53\ldebug.c" />
+    <ClCompile Include="..\thirdparty\lua53\ldo.c" />
+    <ClCompile Include="..\thirdparty\lua53\ldump.c" />
+    <ClCompile Include="..\thirdparty\lua53\lfunc.c" />
+    <ClCompile Include="..\thirdparty\lua53\lgc.c" />
+    <ClCompile Include="..\thirdparty\lua53\linit.c" />
+    <ClCompile Include="..\thirdparty\lua53\liolib.c" />
+    <ClCompile Include="..\thirdparty\lua53\llex.c" />
+    <ClCompile Include="..\thirdparty\lua53\lmathlib.c" />
+    <ClCompile Include="..\thirdparty\lua53\lmem.c" />
+    <ClCompile Include="..\thirdparty\lua53\loadlib.c" />
+    <ClCompile Include="..\thirdparty\lua53\lobject.c" />
+    <ClCompile Include="..\thirdparty\lua53\lopcodes.c" />
+    <ClCompile Include="..\thirdparty\lua53\loslib.c" />
+    <ClCompile Include="..\thirdparty\lua53\lparser.c" />
+    <ClCompile Include="..\thirdparty\lua53\lstate.c" />
+    <ClCompile Include="..\thirdparty\lua53\lstring.c" />
+    <ClCompile Include="..\thirdparty\lua53\lstrlib.c" />
+    <ClCompile Include="..\thirdparty\lua53\ltable.c" />
+    <ClCompile Include="..\thirdparty\lua53\ltablib.c" />
+    <ClCompile Include="..\thirdparty\lua53\ltm.c" />
+    <ClCompile Include="..\thirdparty\lua53\lundump.c" />
+    <ClCompile Include="..\thirdparty\lua53\lutf8lib.c" />
+    <ClCompile Include="..\thirdparty\lua53\lvm.c" />
+    <ClCompile Include="..\thirdparty\lua53\lzio.c" />
+    <ClCompile Include="..\thirdparty\lua53\wmain.c" />
     <ClCompile Include="cppcalllua_lib_xlsxall.cpp" />
     <ClCompile Include="jass_luastate.cpp" />
   </ItemGroup>
@@ -33,7 +93,7 @@
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{acb2650f-8be1-45e7-a82f-a4761596f169}</ProjectGuid>
     <RootNamespace>cppcalllualib</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -53,7 +113,8 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -129,12 +190,11 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.;..\thirdparty\sol2\include;..\thirdparty\sol2\vendor\lua-5.3.5\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..\thirdparty\;..\thirdparty\sol\;..\thirdparty\lua53\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -148,9 +208,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.;..\thirdparty\sol2\include;..\thirdparty\sol2\vendor\lua-5.3.5\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..\thirdparty\;..\thirdparty\sol\;..\thirdparty\lua53\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
