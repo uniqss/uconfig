@@ -78,6 +78,17 @@ int main(int argc, const char** argv)
 
 		const auto pathString = entry.path().string();
 
+		if (pathString.find('~') != std::string::npos)
+		{
+			printf("%s omited. xlsx file name should not contain [~]\n", pathString.c_str());
+			continue;
+		}
+		if (pathString.size() < 5||pathString.substr(pathString.size() - 5) != ".xlsx")
+		{
+			printf("%s omited. xlsx file name should end with [.xlsx]\n", pathString.c_str());
+			continue;
+		}
+
 		printf("%s\n", pathString.c_str());
 
 		std::vector<std::pair<std::string, std::vector<std::vector<std::string> > > > vecxlsx;
