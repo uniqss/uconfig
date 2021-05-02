@@ -1,0 +1,16 @@
+<root>
+	<!-- the directory where .xlsx files are.   需要生成的策划配置文件夹路径 -->
+	<xlsxDirectoryPath>../xlsx_config/</xlsxDirectoryPath>
+	<maxRowCount></maxRowCount>
+	<maxColCount></maxColCount>
+	<!-- scripts path. -->
+	<scriptsPath>../scripts/</scriptsPath>
+	<functions>
+		<function>JustPrint</function>
+		<function>ProcessOneSheetAllData</function>
+	</functions>
+	<after_functions>
+		<after_function>CallGoFormatDirectory</after_function>
+		<after_function>AfterFunction1</after_function>
+	</after_functions>
+</root>
