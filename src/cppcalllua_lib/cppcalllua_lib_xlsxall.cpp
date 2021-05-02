@@ -56,6 +56,7 @@ int BeforeProcess(const std::string& scriptsPath)
 	luastate.init(scriptsPath);
 	sol::state_view lua = luastate.luastate;
 	lua.script_file(scriptsPath + "uniqs.lua");
+	
 
 	return ret;
 }
