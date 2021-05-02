@@ -25,7 +25,7 @@ int main(int argc, const char** argv)
 		help();
 		return -1;
 	}
-	std::string xlsxDirectory = root.child("directory").text().as_string("");
+	std::string xlsxDirectoryPath = root.child("xlsxDirectoryPath").text().as_string("");
 	int maxRowCount = root.child("maxRowCount").text().as_int(-1);
 	int maxColCount = root.child("maxColCount").text().as_int(-1);
 	std::string scriptsPath = root.child("scriptsPath").text().as_string("./");
@@ -48,10 +48,21 @@ int main(int argc, const char** argv)
 		functions.push_back(function);
 	}
 
+	std::vector<std::string> after_functions;
+	for (auto child : root.child("after_functions").children("after_function"))
+	{
+		auto function = child.text().as_string();
 
-	const std::filesystem::path path{ xlsxDirectory.empty() ? std::filesystem::current_path() : xlsxDirectory };
+		//printf("xxxxx %s\n", child.text().as_string());
+
+		after_functions.push_back(function);
+	}
+
+	const std::filesystem::path path{ xlsxDirectoryPath.empty() ? std::filesystem::current_path() : xlsxDirectoryPath };
 
 	BeforeProcess(scriptsPath);
+
+	std::vector<std::string> vecSheetNames;
 
 	for (const auto& entry : std::filesystem::directory_iterator(path))
 	{
@@ -74,6 +85,8 @@ int main(int argc, const char** argv)
 		int ret = 0;
 		for (const auto& it : vecxlsx)
 		{
+			vecSheetNames.push_back(it.first);
+
 			for (const std::string& function : functions)
 			{
 				ret = ProcessOneSheetAllDataSol2(function, pathString, it.first, it.second);
@@ -86,7 +99,15 @@ int main(int argc, const char** argv)
 		}
 	}
 
-	AfterProcess();
+	for (const std::string& function : after_functions)
+	{
+		auto ret = AfterProcess(function, vecSheetNames);
+		if (ret != 0)
+		{
+			printf("AfterProcess not ok function:%s. ret:%d\n", function.c_str(), ret);
+			return ret;
+		}
+	}
 
 	return 0;
 }

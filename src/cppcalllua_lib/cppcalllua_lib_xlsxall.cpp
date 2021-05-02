@@ -74,8 +74,16 @@ int ProcessOneSheetAllDataSol2(const std::string& function, const std::string& x
 	return result;
 }
 
-int AfterProcess()
+int AfterProcess(const std::string& function, const std::vector<std::string>& vecSheetNames)
 {
-	int ret = 0;
-	return ret;
+	sol::state_view lua = luastate.luastate;
+	sol::function func = lua[function];
+	if (!func.valid())
+	{
+		printf("AfterProcess lua function [%s] load error.\n", function.c_str());
+		return -1;
+	}
+
+	int result = func(vecSheetNames);
+	return result;
 }

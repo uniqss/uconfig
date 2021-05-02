@@ -59,6 +59,22 @@ function ProcessOneSheetAllData(xlsxName, sheetName, vecDatas)
     return ProcessOneSheet(xlsxName, sheetName, vecDatas[2], vecDatas[3], vecDatas[5])
 end
 
+function AfterFunction1(sheetNames)
+    utility.PrintTable1(sheetNames)
+    return 0
+end
+
+function CallGoFormatDirectory(sheetNames)
+    utility.PrintTable1(sheetNames)
+    
+    local filePath = "./"..outputDir.."/"
+    
+    gofmtCmd = "gofmt.exe -w "..filePath
+    os.execute(gofmtCmd)
+    print("gofmtCmd:"..gofmtCmd)
+    return 0
+end
+
 function ProcessOneSheet(xlsxName, sheetName, vecNames, vecTypes, vecDescriptions)
     --[[
     print("xlsxName:" .. xlsxName)
@@ -181,8 +197,5 @@ func (m *DT_Hero_Nature_Config) GetQiRate() []uint32 {
 
     io.close(goFile)
 
-    gofmtCmd = "gofmt.exe -w "..filePath
-    os.execute(gofmtCmd)
-    print("gofmtCmd:"..gofmtCmd)
     return 0
 end
