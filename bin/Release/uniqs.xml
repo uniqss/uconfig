@@ -7,7 +7,7 @@
 	<scriptsPath>../test1/scripts/</scriptsPath>
 	<functions>
 		<function>GenerateServerCodeGo</function>
-		<function>GenerateServerDataJson</function>
+		<function>GenerateDataCsv</function>
 		<function>GenerateClientCodeAndDataJs</function>
 	</functions>
 	<after_functions>
