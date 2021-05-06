@@ -11,11 +11,11 @@ uniqs design config generator, xlsx files to definition and data files.
     嵌入脚本实现
 ```
 ## Implemention：
-index | language | implemention | link
------- | ------ | ------ | ------
-I. | lua | implemented | [https://github.com/uniqss/uconfiglua.git](https://github.com/uniqss/uconfiglua.git)
-II. | js | implemented | [https://github.com/uniqss/uconfigjs.git](https://github.com/uniqss/uconfigjs.git)
-III. | python | not implemented | [https://github.com/uniqss/uconfigpython.git](https://github.com/uniqss/uconfigpython.git)
+index | language | implemention
+------ | ------ | ------
+I. | lua | implemented
+II. | js | implemented
+III. | python | not implemented
 
 ## 使用.lua：
         一、git clone https://github.com/uniqss/uconfig.git  或者下载发布版本
