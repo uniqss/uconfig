@@ -7,7 +7,7 @@ uniqs design config generator, xlsx files to definition and data files.
     希望有一套能够简单修改就能适配大多数场景需求的策划配置生成代码及数据的体系。uconfig应运而生
     有的人熟悉lua，有的人熟悉javascript，有的人熟悉python。要能让这些人都能简单的修改就能生成想要格式的结构和数据
     从XLSX生成代码。支持任意语言，只需要简单修改一下生成逻辑，就能生成任意语言。
-    使用极为简单，生成逻辑与读取XLSX分离，使用非常简单的脚本语言lua/javascript/python
+    使用力求简单，生成逻辑与读取XLSX分离，使用脚本语言lua/javascript/python
     嵌入脚本实现
 ```
 ## Implemention：
