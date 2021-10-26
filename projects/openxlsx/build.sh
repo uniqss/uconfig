@@ -20,11 +20,11 @@ cmake --build . --config $BAT_BUILD_TYPE
 
 cd ..
 
-mkdir -p ../../include/headers/
-cp -R ./OpenXLSX/OpenXLSX.hpp ../../include/
+mkdir -p ../../include/openxlsx/
+cp -R ./OpenXLSX/OpenXLSX.hpp ../../include/openxlsx/
 
-mkdir -p ../../include/headers/
-cp -R ./OpenXLSX/headers/* ../../include/headers/
+mkdir -p ../../include/openxlsx/headers/
+cp -R ./OpenXLSX/headers/* ../../include/openxlsx/headers/
 
 mkdir -p ../../lib/
 cp -R ./build/output/$BAT_BUILD_TYPE/*.lib ../../lib/
