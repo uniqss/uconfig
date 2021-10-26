@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/*.dll": true,
+        "**/*.lib": true,
+        "**/*.o": true,
+        "**/*.obj": true,
+        "**/*.so": true
+    },
+    "C_Cpp.default.cppStandard": "gnu++17"
+}
