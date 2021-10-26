@@ -18,6 +18,7 @@ SET(UNIQS_VERSION "${UNIQS_VERSION_MAJOR}.${UNIQS_VERSION_MINOR}.${UNIQS_VERSION
 MESSAGE(STATUS "VERSION: ${UNIQS_VERSION}")
 
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../include/)
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../include/lua/)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../cfg/)
 #INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../include/sol/)
 
@@ -31,4 +32,4 @@ IF (WIN32)
     LIST(APPEND project_src_cpp)
 ENDIF(WIN32)
 
-ADD_EXECUTABLE(${PNAME} ${project_src_cpp} ${project_src_h} ${cfg_src_cpp} ${cfg_src_h} ${project_include})
+ADD_LIBRARY(${PNAME} STATIC ${project_src_cpp} ${project_src_h} ${cfg_src_cpp} ${cfg_src_h} ${project_include})
