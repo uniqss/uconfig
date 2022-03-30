@@ -10,11 +10,32 @@ popd
 echo "build spdlog done ==========================================================================="
 
 
-cd uconfiglua
+pushd lua53
 call build.bat
-cd ..
+popd
+
+echo "build lua53 done ==========================================================================="
+
+
+pushd openxlsx
+call build.bat
+popd
+
+echo "build openxlsx done ==========================================================================="
+
+
+pushd uconfiglua
+call build.bat
+popd
 
 echo "build uconfiglua done ==========================================================================="
+
+
+pushd uconfig
+call build.bat
+popd
+
+echo "build uconfig done ==========================================================================="
 
 
 

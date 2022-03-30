@@ -8,7 +8,7 @@
 
 #include <vector>
 
-#include "cppcalllua_lib.h"
+#include "uconfig_lib.h"
 
 #include "LuaStackAutoProtector.h"
 

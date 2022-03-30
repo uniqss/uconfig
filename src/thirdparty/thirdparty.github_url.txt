@@ -1,9 +1,0 @@
-https://github.com/vinniefalco/LuaBridge
-
-https://github.com/troldal/OpenXLSX
-
-https://github.com/uniqss/v8_build
-
-https://github.com/pmed/v8pp
-
-https://github.com/ThePhD/sol2.git

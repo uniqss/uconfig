@@ -14,6 +14,7 @@ cd ..
 
 set TMP_DEST_PATH=..\include\lua\
 set TMP_SRC_PATH=.\src\
+mkdir %TMP_DEST_PATH%
 cp -R %TMP_SRC_PATH%lua.hpp %TMP_DEST_PATH%
 cp -R %TMP_SRC_PATH%lua.h %TMP_DEST_PATH%
 cp -R %TMP_SRC_PATH%luaconf.h %TMP_DEST_PATH%

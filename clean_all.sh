@@ -7,8 +7,6 @@
 
 
 
-rm -rf bin
-
 cd projects
 
 rm -rf include

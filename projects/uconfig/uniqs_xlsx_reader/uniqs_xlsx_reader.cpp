@@ -15,9 +15,9 @@ char __transCellType(const OpenXLSX::XLValueType& vt)
 	return type[(int)vt];
 }
 
-void __getCellValueString(OpenXLSX::XLCellValue& cellValue, std::string& str)
+void __getCellValueString(const OpenXLSX::XLCellValueProxy& cellValue, std::string& str)
 {
-	switch (cellValue.valueType())
+	switch (cellValue.type())
 	{
 	case XLValueType::String:
 		str = cellValue.get<std::string>();
@@ -78,8 +78,8 @@ int read_xlsx(
 			//cout << "rowidx:" << rowidx << " cellCount:" << row.cellCount() << endl;
 			for (unsigned colidx = 1; colidx <= row.cellCount() && colidx <= colIdxMax; ++colidx)
 			{
-				auto cell = wks.cell(rowidx, colidx);
-				auto cellValue = cell.value();
+				const OpenXLSX::XLCell& cell = wks.cell(rowidx, colidx);
+				const OpenXLSX::XLCellValueProxy& cellValue = cell.value();
 				//cout << rowidx << "|" << colidx << " cell.valueType():" << __transCellType(cell.valueType()) << endl;
 
 				std::string oneCell;

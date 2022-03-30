@@ -1,0 +1,21 @@
+macro(ModuleDependLibraryStatic ModuleName DependLibName)
+    MESSAGE(STATUS "ModuleDependLibraryStatic ${ModuleName} ${DependLibName}")
+    
+    IF (EXISTS ../../lib/${DependLibName}.lib)
+        TARGET_LINK_LIBRARIES(${ModuleName} ../../lib/${DependLibName})
+    ENDIF()
+    IF (EXISTS ../lib/${DependLibName}.lib)
+        TARGET_LINK_LIBRARIES(${ModuleName} ../lib/${DependLibName})
+    ENDIF()
+endmacro(ModuleDependLibraryStatic)
+
+macro(ModuleDependLibraryShared ModuleName DependLibName)
+    MESSAGE(STATUS "ModuleDependLibraryShared ${ModuleName} ${DependLibName}")
+    
+    IF (EXISTS ../../lib/${DependLibName}.lib)
+        TARGET_LINK_LIBRARIES(${ModuleName} ../../lib/${DependLibName})
+    ENDIF()
+    IF (EXISTS ../lib/${DependLibName}.lib)
+        TARGET_LINK_LIBRARIES(${ModuleName} ../lib/${DependLibName})
+    ENDIF()
+endmacro(ModuleDependLibraryShared)

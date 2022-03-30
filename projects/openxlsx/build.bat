@@ -3,7 +3,7 @@ cd OpenXLSX-0.3.1
 set BAT_BUILD_TYPE=RelWithDebInfo
 
 
-rmdir /S /Q build
+rm -rf build
 mkdir build
 cd build
 
@@ -14,11 +14,19 @@ cmake --build . --config %BAT_BUILD_TYPE%
 
 cd ..
 
-xcopy /Y /Q .\OpenXLSX\OpenXLSX.hpp ..\..\include\openxlsx\
-xcopy /Y /S /Q .\OpenXLSX\headers\* ..\..\include\openxlsx\headers\
+mkdir ..\..\include\openxlsx\
+cp -R .\OpenXLSX\OpenXLSX.hpp ..\..\include\openxlsx\
 
-xcopy /Y /S /Q .\build\output\%BAT_BUILD_TYPE%\*.lib ..\..\lib\
-xcopy /Y /S /Q .\build\output\%BAT_BUILD_TYPE%\*.dll ..\..\..\bin\%BAT_BUILD_TYPE%\
+mkdir ..\..\include\openxlsx\headers\
+cp -R ./OpenXLSX/headers/*.hpp ..\..\include\openxlsx\headers\
+
+cp -R .\build\OpenXLSX\OpenXLSX-Exports.hpp ..\..\include\openxlsx\
+
+mkdir ..\..\lib\
+cp -R ./build/output/%BAT_BUILD_TYPE%/*.lib ..\..\lib\
+
+mkdir ..\..\..\bin\%BAT_BUILD_TYPE%\
+cp -R ./build/output/%BAT_BUILD_TYPE%/*.dll ..\..\..\bin\%BAT_BUILD_TYPE%\
 
 cd ..
 

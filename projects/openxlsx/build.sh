@@ -26,6 +26,8 @@ cp -R ./OpenXLSX/OpenXLSX.hpp ../../include/openxlsx/
 mkdir -p ../../include/openxlsx/headers/
 cp -R ./OpenXLSX/headers/* ../../include/openxlsx/headers/
 
+cp -R ./build/OpenXLSX/OpenXLSX-Exports.hpp ../../include/openxlsx/
+
 mkdir -p ../../lib/
 cp -R ./build/output/$BAT_BUILD_TYPE/*.lib ../../lib/
 
