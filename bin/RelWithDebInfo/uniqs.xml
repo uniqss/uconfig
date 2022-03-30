@@ -1,0 +1,18 @@
+<root>
+	<!-- the directory where .xlsx files are.   需要生成的策划配置文件夹路径 -->
+	<xlsxDirectoryPath>../test1/design_config/</xlsxDirectoryPath>
+	<maxRowCount></maxRowCount>
+	<maxColCount></maxColCount>
+	<!-- scripts path. -->
+	<scriptsPath>../test1/scripts/</scriptsPath>
+	<functions>
+		<function>GenerateServerCodeGo</function>
+		<function>GenerateDataCsv</function>
+		<function>GenerateClientCodeAndDataJs</function>
+	</functions>
+	<after_functions>
+		<after_function>GenerateGoGlobal</after_function>
+		<after_function>GenerateJsGlobal</after_function>
+		<after_function>CallGoFormatDirectory</after_function>
+	</after_functions>
+</root>

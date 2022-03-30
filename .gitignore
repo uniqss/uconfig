@@ -11,3 +11,4 @@
 /src/cppcalljs/bin/.idea
 /bin/*.exp
 /bin/*.lib
+build
